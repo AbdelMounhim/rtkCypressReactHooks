@@ -21,14 +21,16 @@ export function Counter() {
     <div>
       <div className={styles.row}>
         <button
+          data-testid="boutonDecrement"
           className={styles.button}
           aria-label="Decrement value"
           onClick={() => dispatch(decrement())}
         >
           -
         </button>
-        <span className={styles.value}>{count}</span>
+        <span data-testid="counter" className={styles.value}>{count}</span>
         <button
+          data-testid="boutonIncrement"
           className={styles.button}
           aria-label="Increment value"
           onClick={() => dispatch(increment())}
@@ -38,18 +40,21 @@ export function Counter() {
       </div>
       <div className={styles.row}>
         <input
+          data-testid="amount"
           className={styles.textbox}
           aria-label="Set increment amount"
           value={incrementAmount}
           onChange={(e) => setIncrementAmount(e.target.value)}
         />
         <button
+          data-testid="inc_amount"
           className={styles.button}
           onClick={() => dispatch(incrementByAmount(incrementValue))}
         >
           Add Amount
         </button>
         <button
+          data-testid="inc_async_amount"
           className={styles.asyncButton}
           onClick={() => dispatch(incrementAsync(incrementValue))}
         >
